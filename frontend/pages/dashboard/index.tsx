@@ -1,20 +1,16 @@
-import { Card, CardActions, CardContent, CardMedia, Typography, Button } from "@mui/material";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import useDashboard from "./hook/useDashboard";
+import { RootState } from "../../store/store";
+import { setEmailMask } from "../../store/emailSlice";
+import { Card, CardActions, CardContent, CardMedia, Typography, Button } from "@mui/material";
 
 const Users = () => {
     const { users } = useDashboard();
-    const [maskEmail, setMaskEmail] = useState<{ [key: string]: boolean }>({});
+    const dispatch = useDispatch();
+    const maskEmail = useSelector((state: RootState) => state.emailMask);
 
     const handleOnMaskEmail = (userId: string) => {
-        setMaskEmail((prev) => {
-            const isEmailMasked: boolean = prev[userId] ?? true;
-
-            return {
-                ...prev,
-                [userId]: !isEmailMasked,
-            };
-        });
+        dispatch(setEmailMask(userId));
     };
 
     return (

@@ -2,16 +2,16 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { RootState } from "../store/store";
-import { clearUser } from "../store/userSlice";
+import { clearLoginUser } from "../store/loginUserSlice";
 import { clearAuth } from "../store/authSlice";
 import "./header.css";
 
 const Header = () => {
-    const user = useSelector((state: RootState) => state.user);
+    const loginUser = useSelector((state: RootState) => state.loginUser);
     const router = useRouter();
 
     const handleOnLogout = () => {
-        clearUser();
+        clearLoginUser();
         clearAuth();
         router.push("/login");
     };
@@ -23,9 +23,9 @@ const Header = () => {
             </button>
 
             <div className="header-profile-container">
-                <p>Welcome, {user.name}</p>
+                <p>Welcome, {loginUser.name}</p>
                 <div className="header-avatar">
-                    <img src={user.avatar} alt="User Avatar" />
+                    <img src={loginUser.avatar} alt="User Avatar" />
                 </div>
             </div>
         </header>

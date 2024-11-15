@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { GoogleOAuthProvider, GoogleLogin, CredentialResponse } from "@react-oauth/google";
 import { jwtDecode, JwtPayload } from "jwt-decode";
-import { setUser } from "../../store/userSlice";
+import { setLoginUser } from "../../store/loginUserSlice";
 import { setAuth } from "../../store/authSlice";
 import "./login.css";
 
@@ -23,13 +23,13 @@ const LoginPage = () => {
         const token = response.credential;
         const decoded = token ? jwtDecode<CustomJwtPayload>(token) : null;
 
-        const user = {
+        const loginUser = {
             name: decoded?.name ?? null,
             email: decoded?.email ?? null,
             avatar: decoded?.picture ?? null,
         };
 
-        dispatch(setUser(user));
+        dispatch(setLoginUser(loginUser));
         dispatch(setAuth(true));
         router.push("/dashboard");
     };

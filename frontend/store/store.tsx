@@ -1,16 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer, { UserState } from "./userSlice";
+import loginUserReducer, { LoginUserState } from "./loginUserSlice";
 import authReducer, { AuthState } from "./authSlice";
+import emailReducer, { EmailState } from "./emailSlice";
+import usersReducer, { UsersState } from "./usersSlice";
 
 export interface RootState {
-    user: UserState;
+    loginUser: LoginUserState;
     auth: AuthState;
+    emailMask: EmailState;
+    users: UsersState;
 }
 
 const store = configureStore({
     reducer: {
-        user: userReducer,
+        loginUser: loginUserReducer,
         auth: authReducer,
+        emailMask: emailReducer,
+        users: usersReducer,
     },
 });
 
