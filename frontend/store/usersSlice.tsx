@@ -13,8 +13,14 @@ const usersSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        setUsers: (state, action: PayloadAction<User[]>) => {
-            state.users = action.payload;
+        setUsers: (state, action: PayloadAction<{ users: User[]; page: number }>) => {
+            const { users, page } = action.payload;
+
+            if (page === 1) {
+                state.users = users;
+            } else {
+                state.users.push(...users);
+            }
         },
     },
 });

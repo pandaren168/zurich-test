@@ -5,7 +5,7 @@ import { setEmailMask } from "../../store/emailSlice";
 import { Card, CardActions, CardContent, CardMedia, Typography, Button } from "@mui/material";
 
 const Users = () => {
-    const { users } = useDashboard();
+    const { hasMore, users, onLoadMore } = useDashboard();
     const dispatch = useDispatch();
     const maskEmail = useSelector((state: RootState) => state.emailMask);
 
@@ -47,6 +47,11 @@ const Users = () => {
                 ) : (
                     <p>No users</p>
                 )}
+                {
+                    <Button onClick={onLoadMore} disabled={!hasMore}>
+                        Load More
+                    </Button>
+                }
             </div>
         </div>
     );

@@ -1,19 +1,25 @@
 import axios from "axios";
 import { User } from "../models/userModel";
 
-export const fetchUsers = async (): Promise<User[]> => {
+interface UsersResponse {
+    users: User[];
+    totalPages: number;
+}
+
+export const fetchUsers = async (page: number): Promise<UsersResponse> => {
     try {
-        const response = await axios.get("https://reqres.in/api/users");
+        const response = await axios.get(`https://reqres.in/api/users?page=${page}`);
 
         if (response.status !== 200) {
             throw new Error("Failed to fetch recommended users");
         }
 
-        const data = response.data.data;
-
-        return data;
+        return { users: response.data.data, totalPages: response.data.total_pages };
     } catch (error) {
         console.error("Error fetching users:", error);
-        return [];
+        return {
+            users: [],
+            totalPages: 1,
+        };
     }
 };
