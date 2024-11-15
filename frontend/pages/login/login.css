@@ -1,0 +1,35 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+}
+
+.login-box {
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin-top: 20px;
+    color: #3e3e3e;
+    font-size: 24px;
+    margin-bottom: 20px;
+}

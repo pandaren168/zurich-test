@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.content {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.loginButton {
+    padding: 0.75rem 2rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+    background-color: #2980b9;
+}
