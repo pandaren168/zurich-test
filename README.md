@@ -107,7 +107,7 @@ _prerequisite_: Setup require data, using postgres database via psql terminal.
 
 To install, follow these steps:
 
-1. Navigate to the frontend directory:
+1. Navigate to the backend directory:
 
     ```sh
     cd backend
