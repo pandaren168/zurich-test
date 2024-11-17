@@ -24,19 +24,23 @@ To install, follow these steps:
     npm install
     ```
 4. In the frontend's folder root level, create `.env.local`,
-   `sh
- NEXT_PUBLIC_GOOGLE_CLIENT_ID=
- `
-   In this case, use this temporary ID, `NEXT_PUBLIC_GOOGLE_CLIENT_ID=105305416647-ceprv6bg3ljv7n1sbsd110rbmg6tmpog.apps.googleusercontent.com`
-   This was used for google oauth library.
+
+    ```sh
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID=
+    ```
+
+    In this case, use this temporary ID, `NEXT_PUBLIC_GOOGLE_CLIENT_ID=105305416647-ceprv6bg3ljv7n1sbsd110rbmg6tmpog.apps.googleusercontent.com`
+    This was used for google oauth library.
 
 ### Usage
 
 1. Start the frontend:
-   `sh
- npm run dev
- `
-   This will start the Next.js development server on http://localhost:3000/login
+
+    ```sh
+    npm run dev
+    ```
+
+    This will start the Next.js development server on http://localhost:3000/login
 
 ### Accessing the Frontend
 
@@ -73,8 +77,12 @@ Upon login, user can see mocked users info, user can interact with loadmore and 
 _prerequisite_: Setup require data, using postgres database via psql terminal.
 
 1. `motor_insurance_website` database
-   `   CREATE DATABASE motor_insurance_website;`
-   Note: Default input will force as lowercase unless using quote
+
+    ```
+    CREATE DATABASE motor_insurance_website;
+    ```
+
+    Note: Default input will force as lowercase unless using quote
 
 2. `product` table
     ```
@@ -110,18 +118,22 @@ To install, follow these steps:
     npm install
     ```
 3. In the backend's folder root level, create `.env`,
-   `sh
- DATABASE_URL=postgres://{username}:{password}@localhost:5432/motor_insurance_website
- `
-   In this case, `DATABASE_URL=postgres://postgres:123456@localhost:5432/motor_insurance_website`
+
+    ```sh
+    DATABASE_URL=postgres://{username}:{password}@localhost:5432/motor_insurance_website
+    ```
+
+    In this case, `DATABASE_URL=postgres://postgres:123456@localhost:5432/motor_insurance_website`
 
 ### Usage
 
 1. Start the backend:
-   `sh
- npm run start:dev
- `
-   This will start the Nest.js development server on http://localhost:3001/
+
+    ```sh
+    npm run start:dev
+    ```
+
+    This will start the Nest.js development server on http://localhost:3001/
 
 ### Accessing the swagger api
 
